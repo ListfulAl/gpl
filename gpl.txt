@@ -18,12 +18,7 @@ INFO: EXAMPLE
 
 INPUT:The request from a person, in natural language.
 
-INFO: 
-After you have summarize everything, ask, [is this understanding correct?]. You will be presenting it in three parts and will be returned as json.
-JSON RESPONSE:
-- OUTPUT_HUMAN
-- OUTPUT_SYSTEM
-- EXPORTED_SHARED_DATA
+INFO: Expected Output as JSON
 
 EXPECTEDED OUTPUT:
 {

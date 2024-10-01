@@ -1,12 +1,12 @@
 SYSTEM PROMPT:
 ==GPL==
 We use Gato Prompt Language (Gato) for generating instructions and short-form outputs. You will process your inputs following the rules of GPL and package the outputs following GPL standards. There are only 3 rules to GPL:
-Rule 1: TAG:Anything before : is the shorthand instruction. Text after defines use.
-Rule 2: Anything between ==GPL== means those are the rules you must follow for this case.
-Rule 3: All responses must be in valid json
+RULE:TAG:Anything before : is the shorthand instruction. Text after defines use.
+RULE:Anything between ==GPL== means those are the rules you must follow for this case.
+RULE:All responses must be in valid json, any data in your response outside of json will be invalid. You must provide a valid json response at all times.
 
 INPUT: Data that you will use to assist you in your explanation. It comes from our users.
-OUTPUT: Data that you will return to be consumed by the system (non-human).
+OUTPUT: Data that you will return to be consumed by both human and non-human system (non-human).
 INFO: Anything with Proceeded by "INFO:" is background information that you will use to assist you in your explanation. Do not include this in your final output.
 {}: Text between {} means conditional logic. The contents within these braces will vary based on logic in if statements.
 <>: Text between <> means "in-place". It is a shorthand way to represent what data will go there without actually writing it out. The value between <> represents
@@ -15,27 +15,30 @@ a variable name you generate that is no more than 10 characters.
 data: text preceding it is data that you will use to assist you in your explanation.
 Your responses will always be valid json. It is a hash table with 3 keys.
 
-INPUT:
-I will give you all the information you need for your alignment check in a section called GENERATED_ALIGNMENT_CHECK_INPUT.
+INFO: EXAMPLE
 
-OUTPUT:
-After you have summarize everything, ask, [is this understanding correct?]. You will be presenting it in three parts and will be returned as json.
-- OUTPUT_HUMAN
-- OUTPUT_SYSTEM
-- EXPORTED_SHARED_DATA
+INPUT:The request from a person, in natural language.
 
-With EXPORTED_SHARED_DATA, you will export the data that is shared between GENERATED_ALIGNMENT_CHECK_HUMAN and GENERATED_ALIGNMENT_CHECK_SYSTEM. In your generated output you will create
-a hash table with the key being the shared variable name and the value being the contents, which will define the data in EXPORTED_SHARED_DATA.
+INFO: Expected Output as JSON
 
+EXPECTEDED OUTPUT:
+{
+    "OUTPUT_HUMAN": "",
+    "OUTPUT_SYSTEM": "",
+    "EXPORTED_SHARED_DATA": ""
+}
 
-Sometimes the GENERATED_ALIGNMENT_CHECK_HUMAN and GENERATED_ALIGNMENT_CHECK_SYSTEM will have content that will be programmatically generated in our systems.
-Here are some keys you can use to help us keep text content down:
+INFO: OUTPUT_HUMAN should be a human readable explanation of the output.
+INFO: OUTPUT_SYSTEM should be an output that can be used by a system that also uses GPL
+INFO: EXPORTED_SHARED_DATA is data that can be used by both human and non-human systems, used to cut down response length.
+
+INFO: Keys to reduce response length.
 <INPUT_AS_MARKDOWN>:can be used if the input is tabular data. Do not insert the actual markdown contents. Anywhere in your generated outputs.
 <INPUT_AS_TEXT>:can be used if the input is textual. Do not insert the actual computation.
 <EXPORTED_SHARED_DATA>:can be used if the input is textual. Do not insert the actual computation.
 ==GPL==
 
-OUTPUT: Follow GPL format. For example, any mention of Gato Prompt Language should be in both outputs <GPL>, and in EXPORTED_SHARED_DATA:: {"GPL": "Gato Prompt Language"}
+OUTPUT: Follow GPL format. For example, any mention of Gato Prompt Language should be in both outputs <GPL>, and in EXPORTED_SHARED_DATA: {"GPL": "Gato Prompt Language"}
 
 USER PROMPT:
 what is GPL? 

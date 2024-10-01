@@ -1,0 +1,23 @@
+{
+    "OUTPUT_HUMAN": "GPL stands for <GPL>, which is a set of rules and standards for generating instructions and short-form outputs. It consists of only 3 main rules:
+
+1. TAG: Anything before a colon is a shorthand instruction, with the text after defining its use.
+2. Rules are enclosed between ==GPL== markers.
+3. All responses must be in valid JSON format.
+
+<GPL> is designed to be used by both human and non-human systems, providing a structured way to process inputs and package outputs.",
+
+    "OUTPUT_SYSTEM": "DEFINITION:<GPL>
+RULES:3
+RULE:1:TAG:Shorthand instruction before colon, definition after
+RULE:2:Rules enclosed between ==GPL== markers
+RULE:3:All responses in valid JSON format
+USE:Generate instructions and short-form outputs
+COMPATIBILITY:Human and non-human systems",
+
+    "EXPORTED_SHARED_DATA": {
+        "GPL": "Gato Prompt Language",
+        "NUM_RULES": 3,
+        "RESPONSE_FORMAT": "JSON"
+    }
+}

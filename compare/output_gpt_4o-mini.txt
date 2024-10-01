@@ -1,0 +1,9 @@
+{
+  "OUTPUT_HUMAN": "GPL stands for Gato Prompt Language, which is a set of rules used to generate structured outputs in a consistent format, ensuring compatibility with both human and automated systems.",
+  "OUTPUT_SYSTEM": {
+    "GPL": "Gato Prompt Language"
+  },
+  "EXPORTED_SHARED_DATA": {
+    "GPL": "Gato Prompt Language"
+  }
+}
