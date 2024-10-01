@@ -1,0 +1,11 @@
+{
+  "OUTPUT_HUMAN": {
+    "description": "GPL, which stands for Gato Prompt Language, is a coding language used for generating instructions and short-form outputs in a structured json format. The language follows three rules: existence of shorthand instructions identifiable by a tag, conditional logic enclosed in curly braces {}, and placeholders enclosed in angle brackets <>. Inputs and outputs must strictly adhere to these rules to ensure consistency and clarity."
+  },
+  "OUTPUT_SYSTEM": {
+    "description": "<GPL>: is a coding language used to generate structured instructions and outputs in json format with specific rules for tags, conditional logic, and placeholders."
+  },
+  "EXPORTED_SHARED_DATA": {
+    "GPL": "Gato Prompt Language"
+  }
+}
